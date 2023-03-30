@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:insta/pages/feed.dart';
+
 import 'package:insta/pages/home/home_page.dart';
 
 void main() {

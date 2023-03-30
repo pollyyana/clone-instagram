@@ -20,10 +20,10 @@ class Feed extends StatelessWidget {
                       'https://s2.glbimg.com/jJreidqJ8qEvwbyxipQ0H0xhqSk=/940x523/e.glbimg.com/og/ed/f/original/2018/11/29/jav_2468.jpg'),
                 ),
               ),
-              Container(
+              const SizedBox(
                 width: 200,
                 // color: Colors.black,
-                child: const Padding(
+                child: Padding(
                   padding: EdgeInsets.only(left: 12),
                   child: Text(
                     'Samira',
@@ -76,25 +76,24 @@ class Feed extends StatelessWidget {
           ),
         ),
         Container(
-          child:
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Curtido por '),
-                    ),
-                    Text('julia jibsu',style: TextStyle(fontWeight: FontWeight.bold),),
-                Text(' e '),
-                Text('Lais Moreira', style: TextStyle(fontWeight: FontWeight.bold),),
-              // TextFormField(),
-
-                  ],
-                ),
-                
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Curtido por '),
+              ),
+              Text(
+                'julia jibsu',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(' e '),
+              Text(
+                'Lais Moreira',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
         ),
-          
-          
-        
 
         //////////////////////////////////////////////////////
         Container(
@@ -103,23 +102,26 @@ class Feed extends StatelessWidget {
           color: Colors.grey[200],
           child: Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
+              const Padding(
+                padding: EdgeInsets.only(left: 10),
                 child: CircleAvatar(
                   backgroundImage: NetworkImage(
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSwZnPDBVxETC4tF62BlPaTRc7ItwDgg8mp7pZdTTFa6ecZe6i1mVZPH3I77n6SjGz_CI&usqp=CAU'),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'nome',
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+              Container(
+                width: 200,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    'nome',
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 265),
+                padding: const EdgeInsets.only(left: 100),
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -152,11 +154,30 @@ class Feed extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.favorite),
+                icon: Icon(Icons.message),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.favorite),
+                icon: Icon(Icons.send),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Curtido por '),
+              ),
+              Text(
+                'julia jibsu',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(' e '),
+              Text(
+                'Lais Moreira',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -176,16 +197,19 @@ class Feed extends StatelessWidget {
                       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSwZnPDBVxETC4tF62BlPaTRc7ItwDgg8mp7pZdTTFa6ecZe6i1mVZPH3I77n6SjGz_CI&usqp=CAU'),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: Text(
-                  'nome',
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+              Container(
+                width: 200,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Text(
+                    'nome',
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 265),
+                padding: const EdgeInsets.only(left: 100),
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -218,11 +242,30 @@ class Feed extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.favorite),
+                icon: Icon(Icons.message),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.favorite),
+                icon: Icon(Icons.send),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text('Curtido por '),
+              ),
+              Text(
+                'julia jibsu',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(' e '),
+              Text(
+                'Lais Moreira',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ],
           ),
