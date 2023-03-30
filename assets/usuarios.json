@@ -1,0 +1,56 @@
+{
+    "stories": [
+        {
+            "id": 1,
+            "name": "samia",
+            "aoVivo": true,
+            "urlImage": "https://cdn.culturagenial.com/imagens/raiva-0-cke.jpg"
+        },
+        {
+            "id": 2,
+            "name": "agnes",
+            "aoVivo": false,
+            "image": "https://akns-images.eonline.com/eol_images/Entire_Site/202198/rs_600x600-211008125356-08.10.21-600x600-AgnesNunes-Instagram.jpg?fit=around%7C600:600&output-quality=90&crop=600:600;center,top"
+        },
+        {
+            "id": 3,
+            "name": "Baco",
+            "aoVivo": false,
+            "image": "https://s2.glbimg.com/dZHFx7hfuWUXf105TmNDX81rtuM=/smart/e.glbimg.com/og/ed/f/original/2022/04/06/bacoexudoblues-sorriso.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "tonia",
+            "aoVivo": false,
+            "image": "https://love.doghero.com.br/wp-content/uploads/2018/12/golden-retriever-1.png"
+        },
+        {
+            "id": 5,
+            "name": "lari",
+            "aoVivo": false,
+            "image": "https://s1.ppllstatics.com/lasprovincias/www/multimedia/202112/12/media/cortadas/gatos-kb2-U160232243326NVC-1248x770@Las%20Provincias.jpg"
+        }
+    ],
+
+        "feed": [
+            {
+                "id": 1,
+                "name": "lara",
+                "urlImage":"https://s2.glbimg.com/jJreidqJ8qEvwbyxipQ0H0xhqSk=/940x523/e.glbimg.com/og/ed/f/original/2018/11/29/jav_2468.jpg" ,
+                "publi" : "https://pbs.twimg.com/media/Fnpj0OYWQAUek2B.jpg"
+            },
+            {
+                "id": 1,
+                "name": "polly",
+                "urlImage": "https://s2.glbimg.com/jJreidqJ8qEvwbyxipQ0H0xhqSk=/940x523/e.glbimg.com/og/ed/f/original/2018/11/29/jav_2468.jpg",
+                "publi": "https://marketplace.canva.com/EAElCg_AAQQ/1/0/1600w/canva-gato-pata-na-cabe%C3%A7a-existencial-foto-e-texto-meme-UgLqqRNZtT4.jpg"
+            }, {
+                "id": 1,
+                "name": "leo",
+                "urlImage": "https://s2.glbimg.com/jJreidqJ8qEvwbyxipQ0H0xhqSk=/940x523/e.glbimg.com/og/ed/f/original/2018/11/29/jav_2468.jpg",
+                "publi": "https://img.ifunny.co/images/ced482ab668d4b87a136578f02fd0fb8ef27d9a2da30afb03d29ea4d226e2854_1.jpg"
+            }
+        
+       
+    ]
+}
