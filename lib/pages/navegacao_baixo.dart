@@ -60,3 +60,29 @@ class _NavegacaoBaixoState extends State<NavegacaoBaixo> {
             )));
   }
 }
+
+
+
+// BottomNavigationBar(items: [
+//                   BottomNavigationBarItem(
+//                     icon: Icon(
+//                       Icons.home_filled,
+//                     ),
+//                   ),
+//                   BottomNavigationBarItem(
+//                     icon: Icon(
+//                       Icons.search,
+//                     ),),
+//                     BottomNavigationBarItem(
+//                     icon: Icon(
+//                       Icons.library_add,
+//                     ),),
+//                     BottomNavigationBarItem(
+//                     icon: Icon(
+//                       Icons.shop,
+//                     ),),
+//                     BottomNavigationBarItem(
+//                     icon: Icon(
+//                       Icons.face_6,
+//                     ),),
+//                 ])

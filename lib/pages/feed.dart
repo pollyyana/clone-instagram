@@ -21,10 +21,10 @@ class Feed extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 55,
+                width: 200,
                 // color: Colors.black,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 12),
                   child: Text(
                     'Samira',
                     style: TextStyle(
@@ -33,7 +33,7 @@ class Feed extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 255),
+                padding: const EdgeInsets.only(left: 100),
                 child: IconButton(
                   onPressed: () {},
                   icon: const Icon(
@@ -57,7 +57,7 @@ class Feed extends StatelessWidget {
         Container(
           height: 50,
           width: 500,
-          color: Colors.grey[200],
+          color: Colors.grey[100],
           child: Row(
             children: [
               IconButton(
@@ -66,15 +66,36 @@ class Feed extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.favorite),
+                icon: Icon(Icons.messenger),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.favorite),
+                icon: Icon(Icons.send),
               ),
             ],
           ),
         ),
+        Container(
+          child:
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('Curtido por '),
+                    ),
+                    Text('julia jibsu',style: TextStyle(fontWeight: FontWeight.bold),),
+                Text(' e '),
+                Text('Lais Moreira', style: TextStyle(fontWeight: FontWeight.bold),),
+              // TextFormField(),
+
+                  ],
+                ),
+                
+        ),
+          
+          
+        
+
         //////////////////////////////////////////////////////
         Container(
           height: 50,
@@ -137,7 +158,6 @@ class Feed extends StatelessWidget {
                 onPressed: () {},
                 icon: Icon(Icons.favorite),
               ),
-              
             ],
           ),
         ),
