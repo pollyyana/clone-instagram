@@ -41,7 +41,7 @@ class Stories extends StatelessWidget {
                           'https://cdn.culturagenial.com/imagens/raiva-0-cke.jpg'),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(7.0),
+                  padding: EdgeInsets.all(4.0),
                   child: ImageAvatar(
                       urlImage:
                           'https://cdn.culturagenial.com/imagens/raiva-0-cke.jpg'),
