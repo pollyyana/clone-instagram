@@ -149,12 +149,13 @@ class Feed extends StatelessWidget {
           child: Row(
             children: [
               IconButton(
+                icon: const Icon(Icons.favorite),
+                color: Colors.red,
                 onPressed: () {},
-                icon: Icon(Icons.favorite),
               ),
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.message),
+                icon: Icon(Icons.messenger_outline),
               ),
               IconButton(
                 onPressed: () {},

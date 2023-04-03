@@ -49,7 +49,7 @@ class ImageAvatar extends StatelessWidget {
             ),
             Row(
               children: [
-                Container(
+                SizedBox(
                   height: 100,
                   width: 80,
                   child: const Align(
