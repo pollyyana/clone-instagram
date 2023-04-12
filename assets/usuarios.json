@@ -9,13 +9,13 @@
         {
             "id": 2,
             "name": "agnes",
-            "ao_vivo": false,
+            "ao_vivo": true,
             "url_imagem": "https://akns-images.eonline.com/eol_images/Entire_Site/202198/rs_600x600-211008125356-08.10.21-600x600-AgnesNunes-Instagram.jpg?fit=around%7C600:600&output-quality=90&crop=600:600;center,top"
         },
         {
             "id": 3,
             "name": "Baco",
-            "ao_vivo": true,
+            "ao_vivo": false,
             "url_imagem": "https://s2.glbimg.com/dZHFx7hfuWUXf105TmNDX81rtuM=/smart/e.glbimg.com/og/ed/f/original/2022/04/06/bacoexudoblues-sorriso.jpeg"
         },
         {

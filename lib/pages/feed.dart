@@ -44,7 +44,7 @@ class _FeedState extends State<Feed> {
                                 Container(
                                   height: 50,
                                   width: 500,
-                                  color: Colors.grey[200],
+                                  // color: Colors.grey[200],
                                   child: Row(
                                     children: [
                                       CircleAvatar(

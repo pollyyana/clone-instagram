@@ -56,7 +56,6 @@ class Stories extends StatelessWidget {
     );
   }
 }
-
     // return SingleChildScrollView(
     //   scrollDirection: Axis.horizontal,
     //   child: Column(
