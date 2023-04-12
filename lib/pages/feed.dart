@@ -1,277 +1,187 @@
 import 'package:flutter/material.dart';
+import 'package:insta/pages/home/feed_controller.dart';
+import 'package:insta/pages/models/feed_model.dart';
 
-class Feed extends StatelessWidget {
+class Feed extends StatefulWidget {
   const Feed({super.key});
 
   @override
+  State<Feed> createState() => _FeedState();
+}
+
+class _FeedState extends State<Feed> {
+  final FeedController controller = FeedController();
+  Future<List<FeedModel>?>? feeds;
+  @override
+  void initState() {
+    super.initState();
+    alterarFeed();
+  }
+
+  void alterarFeed() {
+    feeds = controller.pegarFeed();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          height: 50,
-          width: 500,
-          color: Colors.grey[200],
-          child: Row(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://s2.glbimg.com/jJreidqJ8qEvwbyxipQ0H0xhqSk=/940x523/e.glbimg.com/og/ed/f/original/2018/11/29/jav_2468.jpg'),
-                ),
-              ),
-              const SizedBox(
-                width: 200,
-                // color: Colors.black,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 12),
-                  child: Text(
-                    'Samira',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 100),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu_outlined,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: 400,
-          width: 500,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-                    'https://pbs.twimg.com/media/Fnpj0OYWQAUek2B.jpg'),
-                fit: BoxFit.fill),
-          ),
-        ),
-        Container(
-          height: 50,
-          width: 500,
-          color: Colors.grey[100],
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.favorite),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.messenger),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.send),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Curtido por '),
-              ),
-              Text(
-                'julia jibsu',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(' e '),
-              Text(
-                'Lais Moreira',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
+    return FutureBuilder(
+      future: feeds,
+      builder: (context, snapshot) {
+        switch (snapshot.connectionState) {
+          case ConnectionState.none:
+          case ConnectionState.waiting:
+            return const CircularProgressIndicator.adaptive();
+          case ConnectionState.active:
+          case ConnectionState.done:
+            return SingleChildScrollView(
+              child: (snapshot.data == null)
+                  ? const SizedBox()
+                  : Column(
+                      children: snapshot.data!
+                          .map<Widget>(
+                            (feed) => Column(
+                              children: [
+                                Container(
+                                  height: 50,
+                                  width: 500,
+                                  color: Colors.grey[200],
+                                  child: Row(
+                                    children: [
+                                      CircleAvatar(
+                                        backgroundImage: NetworkImage(feed.usuario.imagem),
+                                      ),
+                                      SizedBox(
+                                        width: 200,
+                                        // color: Colors.black,
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(left: 12),
+                                          child: Text(
+                                            feed.usuario.nome,
+                                            style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 100),
+                                        child: IconButton(
+                                          onPressed: () {},
+                                          icon: const Icon(
+                                            Icons.menu_outlined,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Container(
+                                  height: 400,
+                                  width: 500,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(image: NetworkImage(feed.publi), fit: BoxFit.fill),
+                                  ),
+                                ),
+                                Container(
+                                  height: 50,
+                                  width: 500,
+                                  color: Colors.grey[200],
+                                  child: Row(
+                                    children: [
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(Icons.favorite),
+                                      ),
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(Icons.message),
+                                      ),
+                                      IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(Icons.send),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                          .toList()),
 
-        //////////////////////////////////////////////////////
-        Container(
-          height: 50,
-          width: 500,
-          color: Colors.grey[200],
-          child: Row(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSwZnPDBVxETC4tF62BlPaTRc7ItwDgg8mp7pZdTTFa6ecZe6i1mVZPH3I77n6SjGz_CI&usqp=CAU'),
-                ),
-              ),
-              Container(
-                width: 200,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Text(
-                    'nome',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 100),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu_outlined,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: 400,
-          width: 500,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-                    'https://marketplace.canva.com/EAElCg_AAQQ/1/0/1600w/canva-gato-pata-na-cabe%C3%A7a-existencial-foto-e-texto-meme-UgLqqRNZtT4.jpg'),
-                fit: BoxFit.fill),
-          ),
-        ),
-        Container(
-          height: 50,
-          width: 500,
-          color: Colors.grey[200],
-          child: Row(
-            children: [
-              IconButton(
-                icon: const Icon(Icons.favorite),
-                color: Colors.red,
-                onPressed: () {},
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.messenger_outline),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.send),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Curtido por '),
-              ),
-              Text(
-                'julia jibsu',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(' e '),
-              Text(
-                'Lais Moreira',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
-
-        ///////////////////////////////////////////////
-        Container(
-          height: 50,
-          width: 500,
-          color: Colors.grey[200],
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSwZnPDBVxETC4tF62BlPaTRc7ItwDgg8mp7pZdTTFa6ecZe6i1mVZPH3I77n6SjGz_CI&usqp=CAU'),
-                ),
-              ),
-              Container(
-                width: 200,
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Text(
-                    'nome',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 100),
-                child: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu_outlined,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          height: 400,
-          width: 500,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: NetworkImage(
-                    'https://img.ifunny.co/images/ced482ab668d4b87a136578f02fd0fb8ef27d9a2da30afb03d29ea4d226e2854_1.jpg'),
-                fit: BoxFit.fill),
-          ),
-        ),
-        Container(
-          height: 50,
-          width: 500,
-          color: Colors.grey[200],
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.favorite),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.message),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.send),
-              ),
-            ],
-          ),
-        ),
-        Container(
-          child: Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('Curtido por '),
-              ),
-              Text(
-                'julia jibsu',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(' e '),
-              Text(
-                'Lais Moreira',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
-        ),
-      ],
+              //  ListView.separated(
+              //     physics: NeverScrollableScrollPhysics(),
+              //     shrinkWrap: true,
+              //     itemBuilder: (_, index) {
+              //       final feed = snapshot.data![index];
+              //       return Column(
+              //         children: [
+              //           Container(
+              //             height: 50,
+              //             width: 500,
+              //             color: Colors.grey[200],
+              //             child: Row(
+              //               children: [
+              //                 // const Padding(padding: EdgeInsets.only(left: 10), child: ImageAvatar(urlImage: urlImage, nome: nome, aoVivo: aoVivo)
+              //                 CircleAvatar(
+              //                   backgroundImage: NetworkImage(feed.usuario.imagem),
+              //                 ),
+              //                 SizedBox(
+              //                   width: 200,
+              //                   // color: Colors.black,
+              //                   child: Padding(
+              //                     padding: const EdgeInsets.only(left: 12),
+              //                     child: Text(
+              //                       feed.usuario.nome,
+              //                       style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              //                     ),
+              //                   ),
+              //                 ),
+              //                 Padding(
+              //                   padding: const EdgeInsets.only(left: 100),
+              //                   child: IconButton(
+              //                     onPressed: () {},
+              //                     icon: const Icon(
+              //                       Icons.menu_outlined,
+              //                     ),
+              //                   ),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //           Container(
+              //             height: 400,
+              //             width: 500,
+              //             decoration: BoxDecoration(
+              //               image: DecorationImage(image: NetworkImage(feed.publi), fit: BoxFit.fill),
+              //             ),
+              //           ),
+              //           Container(
+              //             height: 50,
+              //             width: 500,
+              //             color: Colors.grey[200],
+              //             child: Row(
+              //               children: [
+              //                 IconButton(
+              //                   onPressed: () {},
+              //                   icon: Icon(Icons.favorite),
+              //                 ),
+              //                 IconButton(
+              //                   onPressed: () {},
+              //                   icon: Icon(Icons.message),
+              //                 ),
+              //                 IconButton(
+              //                   onPressed: () {},
+              //                   icon: Icon(Icons.send),
+              //                 ),
+              //               ],
+              //             ),
+              //           ),
+              //         ],
+              //       );
+              //     },
+              //     separatorBuilder: (context, index) => const Divider(),
+              //     itemCount: snapshot.data?.length ?? 0),
+            );
+        }
+      },
     );
   }
 }

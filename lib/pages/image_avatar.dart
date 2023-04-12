@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class ImageAvatar extends StatelessWidget {
-  const ImageAvatar({super.key, required this.urlImage});
+  const ImageAvatar({super.key, required this.urlImage, required String nome, required bool aoVivo});
 
   final String urlImage;
 
@@ -48,11 +48,11 @@ class ImageAvatar extends StatelessWidget {
               ),
             ),
             Row(
-              children: [
+              children: const [
                 SizedBox(
                   height: 100,
                   width: 80,
-                  child: const Align(
+                  child: Align(
                     alignment: Alignment.bottomCenter,
                 
                     child: Text(

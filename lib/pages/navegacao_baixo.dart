@@ -12,7 +12,7 @@ class _NavegacaoBaixoState extends State<NavegacaoBaixo> {
   Widget build(BuildContext context) {
     return Padding(
         padding: const EdgeInsets.all(2.0),
-        child: Container(
+        child: SizedBox(
             height: 50,
             width: 420,
             child: Row(
@@ -22,21 +22,21 @@ class _NavegacaoBaixoState extends State<NavegacaoBaixo> {
                   padding: const EdgeInsets.only(left: 15, right: 15),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.home_filled),
+                    icon: const Icon(Icons.home_filled),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.search),
+                    icon: const Icon(Icons.search),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 15, right: 15),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.library_add,
                     ),
                   ),
@@ -45,14 +45,14 @@ class _NavegacaoBaixoState extends State<NavegacaoBaixo> {
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.shop),
+                    icon: const Icon(Icons.shop),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.face_3),
+                    icon: const Icon(Icons.face_3),
                   ),
                 ),
                 

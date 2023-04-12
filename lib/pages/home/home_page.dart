@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:insta/pages/feed.dart';
 import 'package:insta/pages/navegacao_baixo.dart';
-import 'package:insta/pages/stories.dart';
+
+import '../stories.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,17 +42,26 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: SingleChildScrollView(
-        
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Stories(),
-            Feed(),
+            const Feed(),
           ],
         ),
       ),
       bottomNavigationBar: const NavegacaoBaixo(),
     );
+
+    //  Column(children: [
+    //   Expanded(
+    //     child: Stories(),
+    //   ),
+    //   Expanded(
+    //     child: Feed(),
+    //   ),
+    //   Expanded(child: NavegacaoBaixo())
+    // ]));
   }
 }
